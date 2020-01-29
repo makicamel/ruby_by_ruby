@@ -8,6 +8,14 @@ def max(tree)
   left > right ? left : right
 end
 
+def min(tree)
+  return tree[1] if tree[0] == "lit"
+
+  left = min tree[1]
+  right = min tree[2]
+  left < right ? left : right
+end
+
 tree = minruby_parse(gets)
-answer = max(tree)
-p answer
+p "max: #{max(tree)}"
+p "min: #{min(tree)}"
