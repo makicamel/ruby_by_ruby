@@ -3,16 +3,14 @@ require "minruby"
 def max(tree)
   return tree[1] if tree[0] == "lit"
 
-  left = max tree[1]
-  right = max tree[2]
+  left, right = max(tree[1]), max(tree[2])
   left > right ? left : right
 end
 
 def min(tree)
   return tree[1] if tree[0] == "lit"
 
-  left = min tree[1]
-  right = min tree[2]
+  left, right = min(tree[1]), max(tree[2])
   left < right ? left : right
 end
 
