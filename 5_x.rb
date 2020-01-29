@@ -29,6 +29,6 @@ def evaluate(tree)
   end
 end
 
-tree = minruby_parse(gets)
+tree = minruby_parse(minruby_load)
 answer = evaluate(tree)
 p answer
