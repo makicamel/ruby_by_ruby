@@ -18,6 +18,16 @@ def evaluate(tree)
     left**right
   when "%"
     left % right
+  when "<"
+    left < right
+  when "<="
+    left <= right
+  when ">"
+    left > right
+  when ">="
+    left >= right
+  when "=="
+    left == right
   end
 end
 
