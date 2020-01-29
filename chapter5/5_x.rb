@@ -26,6 +26,12 @@ def evaluate(tree)
     evaluate(tree[1]) >= evaluate(tree[2])
   when "=="
     evaluate(tree[1]) == evaluate(tree[2])
+  when "stmts"
+    i = 1
+    while tree[i] != nil
+      evaluate(tree[i])
+      i += 1
+    end
   when "func_call"
     p evaluate(tree[2])
   end
