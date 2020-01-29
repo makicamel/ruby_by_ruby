@@ -26,9 +26,10 @@ def evaluate(tree)
     evaluate(tree[1]) >= evaluate(tree[2])
   when "=="
     evaluate(tree[1]) == evaluate(tree[2])
+  when "func_call"
+    p evaluate(tree[2])
   end
 end
 
 tree = minruby_parse(minruby_load)
-answer = evaluate(tree)
-p answer
+evaluate(tree)
