@@ -1,16 +1,28 @@
 require "minruby"
 
-def sum(tree)
+def evaluate(tree)
   case tree[0]
   when "+"
-    left = sum(tree[1])
-    right = sum(tree[2])
+    left = evaluate(tree[1])
+    right = evaluate(tree[2])
     left + right
+  when "-"
+    left = evaluate(tree[1])
+    right = evaluate(tree[2])
+    left - right
+  when "*"
+    left = evaluate(tree[1])
+    right = evaluate(tree[2])
+    left * right
+  when "/"
+    left = evaluate(tree[1])
+    right = evaluate(tree[2])
+    left / right
   when "lit"
     tree[1]
   end
 end
 
 tree = minruby_parse(gets)
-answer = sum(tree)
+answer = evaluate(tree)
 p answer
