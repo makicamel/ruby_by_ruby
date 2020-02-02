@@ -29,7 +29,7 @@ def evaluate(tree, env)
   when "stmts"
     i = 1
     last = nil
-    until tree[i].nil?
+    while tree[i]
       last = evaluate(tree[i], env)
       i += 1
     end
