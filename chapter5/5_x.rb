@@ -34,6 +34,10 @@ def evaluate(tree, env)
       i += 1
     end
     last
+  when "var_assign"
+    env[tree[1]] = evaluate(tree[2], env)
+  when "var_ref"
+    env[tree[1]]
   when "func_call"
     p evaluate(tree[2], env)
   end
